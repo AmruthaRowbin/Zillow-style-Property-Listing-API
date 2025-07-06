@@ -81,6 +81,7 @@ How to Run
 🐳 Using Docker Compose
 
 This project supports Docker out of the box. You can use Docker to spin up the app along with MongoDB and Redis using the included `Dockerfile` and `docker-compose.yml`.
+
 ✅ Dockerfile — already added to repo  
 ✅ docker-compose.yml — already added
 
@@ -97,3 +98,31 @@ Make sure to use:env
 
 MONGO_URI=mongodb://localhost:27017/propertylist
 REDIS_HOST=localhost
+
+
+
+📬 API Testing with Postman
+You can test the APIs using the Postman collection provided in the `/docs` folder.
+
+How to Use:
+Open Postman.
+
+Go to File > Import.
+
+Choose the file:
+
+docs/propertylist_postman_collection.json
+
+The collection will appear in your workspace under "Collections".
+
+Now you can test the following:
+
+User Registration,
+
+Login,
+
+CRUD for Properties,
+
+Protected Routes (RBAC)
+
+
