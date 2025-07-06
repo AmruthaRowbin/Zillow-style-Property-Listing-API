@@ -1,0 +1,35 @@
+version: '3.9'
+services:
+  api:
+    build: .
+    container_name: propertylist
+    ports:
+      - "5000:5000"
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/propertylist
+      - REDIS_HOST=redis
+      - JWT_SECRET=myjwtsecret
+    depends_on:
+      - mongo
+      - redis
+    volumes:
+      - .:/app
+    restart: always
+
+  mongo:
+    image: mongo:6
+    container_name: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db   
+
+  redis:
+    image: redis:alpine
+    container_name: redis
+    ports:
+      - "6379:6379"
+
+volumes:
+  mongo-data:   
+ 
