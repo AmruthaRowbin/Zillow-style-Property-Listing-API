@@ -1,0 +1,316 @@
+
+{
+	"info": {
+		"_postman_id": "f9cbc839-7793-4fff-8561-5982a03320ef",
+		"name": "propertyList",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29045359"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"admin@example.com\",\r\n  \"password\": \"admin123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "property",
+			"item": [
+				{
+					"name": "addProperty",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NjhiNjA2NjZiMGVmYzU2OGMwMjc3OSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1MTY5NDE3NSwiZXhwIjoxNzUxNzgwNTc1fQ.pmfxTMTsE7DStUkKSe3xyVkyLoDgndCJo8wOejfhVjM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"title\": \"Penthouse in Bangalore Indiranagar\",\r\n    \"description\": \"Premium space for large family\",\r\n    \"location\": \"Bangalore\",\r\n    \"price\": 90000,\r\n    \"bedrooms\": 5\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/properties",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"properties"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateProperty",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NjhiNjA2NjZiMGVmYzU2OGMwMjc3OSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1MTY5NDE3NSwiZXhwIjoxNzUxNzgwNTc1fQ.pmfxTMTsE7DStUkKSe3xyVkyLoDgndCJo8wOejfhVjM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"title\": \"Penthouse in Bangalore trinity\",\r\n    \"description\": \"Premium space for large family\",\r\n    \"location\": \"Bangalore\",\r\n    \"price\": 1560000,\r\n    \"bedrooms\": 6\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/properties/6868bee743765096426a754c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"properties",
+								"6868bee743765096426a754c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetPropertyById",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NjhiNjA2NjZiMGVmYzU2OGMwMjc3OSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1MTY5NDE3NSwiZXhwIjoxNzUxNzgwNTc1fQ.pmfxTMTsE7DStUkKSe3xyVkyLoDgndCJo8wOejfhVjM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"title\": \"Penthouse in Bangalore trinity\",\r\n    \"description\": \"Premium space for large family\",\r\n    \"location\": \"Bangalore\",\r\n    \"price\": 1560000,\r\n    \"bedrooms\": 6\r\n  }"
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/properties/6868bee743765096426a754c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"properties",
+								"6868bee743765096426a754c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "removeProperty",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NjhiNjA2NjZiMGVmYzU2OGMwMjc3OSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1MTY5NDE3NSwiZXhwIjoxNzUxNzgwNTc1fQ.pmfxTMTsE7DStUkKSe3xyVkyLoDgndCJo8wOejfhVjM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/properties/6868bee743765096426a754c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"properties",
+								"6868bee743765096426a754c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "serachwithpagination",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NjhiNjA2NjZiMGVmYzU2OGMwMjc3OSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1MTY5NDE3NSwiZXhwIjoxNzUxNzgwNTc1fQ.pmfxTMTsE7DStUkKSe3xyVkyLoDgndCJo8wOejfhVjM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/properties?location=Kochi&page=1&limit=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"properties"
+							],
+							"query": [
+								{
+									"key": "location",
+									"value": "Kochi"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllproperties",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NjhiNjA2NjZiMGVmYzU2OGMwMjc3OSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1MTY5NDE3NSwiZXhwIjoxNzUxNzgwNTc1fQ.pmfxTMTsE7DStUkKSe3xyVkyLoDgndCJo8wOejfhVjM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/properties",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"properties"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
