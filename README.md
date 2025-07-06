@@ -90,7 +90,9 @@ This project supports Docker out of the box. You can use Docker to spin up the a
 ✅ docker-compose.yml — already added
 
 Docker Compose Commands:-
+
 docker-compose up --build
+
 To stop  : docker-compose down
 
 
