@@ -1,6 +1,7 @@
 Property Listing Management System
 
-This is a  backend service for managing property listings. The system supports user authentication, property creation and listing, and leverages Docker for containerization, MongoDB for data storage, Redis for caching, and JWT for security.
+This is a Zillow-style Property Listing API built using the node js with express  , enhanced with JWT authentication, Redis caching, Rate Limiting, and Dockerized services.
+It supports secure login, CRUD operations for properties, and powerful API features like filtering, search, and pagination.
 
 📁  Project Structure
 
@@ -23,19 +24,16 @@ propertylist/
 
 Features
 
-🔐 JWT Authentication (register, login)
-
-🏘️ CRUD for Properties
-
-⚡ Redis Integration for performance
-
-🚦 Rate Limiting using express-rate-limit
-
-🧪 Unit Testing with Jest + Supertest
-
-🐳 Dockerized (Mongo + Redis + Node server)
-
-📫 Postman collection for API testing
+| Feature                       | Description                                                             |
+| ----------------------------- | ----------------------------------------------------------------------- |
+| 🔐 JWT Authentication         | Secure login and user registration with tokens                          |
+| 🏠 CRUD for Properties        | Add, update, delete, and list property listings                         |
+| ⚡ Redis Integration           | First-time fetch from MongoDB → cached in Redis for faster future loads |
+| 📄 Pagination, Search, Filter | Easily list properties with filters, keyword search, and pagination     |
+| 🚦 Rate Limiting              | Prevents abuse of API endpoints                                         |
+| 🧪 Unit Testing (Jest)        | Test critical routes using Jest and Supertest                           |
+| 🐳 Docker Support             | Run Redis + Mongo + Node API server using Docker Compose                |
+| 📬 Postman Collection         | Provided for testing all routes                                         |
 
 
 Technologies Used
@@ -52,6 +50,39 @@ Technologies Used
 | Nodemon           | Dev server auto-reloader                      |
 | Jest & Supertest  | Testing tools                                 |
 | Postman           | API testing tool                              |
+
+
+
+
+Redis Cache Logic
+
+When /api/v1/properties is called:
+
+First checks in Redis if the property list exists.
+
+If found (cache hit) → returns cached data.
+
+If not found (cache miss) → fetches from MongoDB, stores the result in Redis for future calls.
+
+On new property addition (POST /api/v1/properties) or update/delete, the cached properties key is cleared from Redis to maintain consistency.
+
+Filtering, Searching & Pagination
+
+The endpoint /api/v1/properties supports the following query parameters:
+
+
+| Query Param | Description                   | Example                               |
+| ----------- | ----------------------------- | ------------------------------------- |
+| `location`  | Filter properties by location | `/api/v1/properties?location=Kochi`   |
+| `search`    | Search by title/description   | `/api/v1/properties?search=penthouse` |
+| `page`      | Pagination page number        | `/api/v1/properties?page=2`           |
+| `limit`     | Number of items per page      | `/api/v1/properties?limit=10`         |
+
+
+
+You can combine them like:
+GET /api/v1/properties?location=Kochi&page=1&limit=10&search=premium
+
 
 
 API Endpoints
