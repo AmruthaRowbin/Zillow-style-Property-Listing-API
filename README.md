@@ -64,15 +64,14 @@ POST	       /api/v1/auth/register	     Register a user
 POST	      /api/v1/auth/login	         Login a user
 
 
-Property Routes (JWT protected)
+| Method | Endpoint                 | Description         |
+| ------ | ------------------------ | ------------------- |
+| GET    | `/api/v1/properties`     | List all properties |
+| POST   | `/api/v1/properties`     | Create new property |
+| GET    | `/api/v1/properties/:id` | Get single property |
+| PUT    | `/api/v1/properties/:id` | Update property     |
+| DELETE | `/api/v1/properties/:id` | Delete property     |
 
-
-Method	         Endpoint	                  Description
-GET	           /api/v1/properties	          List all properties
-POST	        /api/v1/properties	          Create new property
-GET	         /api/v1/properties/:id	        Get single property
-PUT	        /api/v1/properties/:id	        Update property
-DELETE	   /api/v1/properties/:id	          Delete property
 
 
 
