@@ -165,9 +165,13 @@ Protected Routes (RBAC)
 
 
 .env file 
+
 PORT=5000
+
 MONGO_URI=mongodb://mongo:27017/propertylist
+
 JWT_SECRET=myjwtsecret
+
 REDIS_HOST=redis
 
 
