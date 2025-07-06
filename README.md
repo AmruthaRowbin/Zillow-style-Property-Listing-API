@@ -59,9 +59,14 @@ API Endpoints
 
 Auth Routes
 
-Method	      Endpoint	                  Description
-POST	       /api/v1/auth/register	     Register a user
-POST	      /api/v1/auth/login	         Login a user
+| Method | Endpoint                | Description     |
+| ------ | ----------------------- | --------------- |
+| POST   | `/api/v1/auth/register` | Register a user |
+| POST   | `/api/v1/auth/login`    | Login a user    |
+
+
+
+ Property Routes (JWT Protected)
 
 
 | Method | Endpoint                 | Description         |
