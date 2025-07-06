@@ -40,18 +40,18 @@ Features
 
 Technologies Used
 
-Tech                            	Description
-Node.js	                         JavaScript runtime
-Express.js	                     Web framework
-MongoDB	NoSQL                      Database
-Mongoose	                        MongoDB ODM
-Redis	                            In-memory key-value store
-Docker	                          Containerization
-JWT	                             Secure Authentication
-Nodemon	                       Dev server auto-reloader
-Jest	                        Unit Testing
-Postman	                       API Testing
-
+| Tech              | Description                                   |
+|-------------------|-----------------------------------------------|
+| Node.js           | JavaScript runtime                            |
+| Express.js        | Web framework                                 |
+| MongoDB           | NoSQL database                                |
+| Mongoose          | MongoDB ODM (Object Document Mapper)          |
+| Redis             | In-memory key-value store                     |
+| JWT               | JSON Web Token Authentication                 |
+| Docker            | Containerization                              |
+| Nodemon           | Dev server auto-reloader                      |
+| Jest & Supertest  | Testing tools                                 |
+| Postman           | API testing tool                              |
 
 
 API Endpoints
