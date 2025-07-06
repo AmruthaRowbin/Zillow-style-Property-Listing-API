@@ -172,6 +172,7 @@ REDIS_HOST=redis
 
 
 Testing
+
 This project uses Jest and Supertest for unit and integration testing of the API endpoints.
 
 
