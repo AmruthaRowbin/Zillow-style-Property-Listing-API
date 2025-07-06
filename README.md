@@ -103,6 +103,7 @@ npm run dev
 Make sure to use:env
 
 MONGO_URI=mongodb://localhost:27017/propertylist
+
 REDIS_HOST=localhost
 
 
