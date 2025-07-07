@@ -9,13 +9,13 @@ It supports secure login, CRUD operations for properties, and powerful API featu
 | -------------------- | ----------------------------------------------------------- |
 | `config/`            | Database and Redis configuration files                      |
 | `controllers/`       | Route handler logic (e.g., `auth`, `property`)              |
-| `docs/`              | API documentation (Postman collection, Swagger, etc.)       |
+| `docs/`              | API documentation (Postman collection)       |
 | `jobs/`              | Scheduled background tasks (e.g., property updater)         |
-| `middleware/`        | Custom middleware (auth, error handling, etc.)              |
+| `middleware/`        | Custom middleware (auth, error handling,role,)              |
 | `models/`            | Mongoose models (`User`, `Property`, etc.)                  |
 | `routes/`            | API route definitions                                       |
 | `test/`              | Unit and integration tests using Jest & Supertest           |
-| `utils/`             | Utility/helper functions                                    |
+| `utils/`             | Utility/jsonwebtoken                                   |
 | `.env`               | Environment variable definitions                            |
 | `.gitignore`         | Ignore files like `node_modules`, `.env`, log files, etc.   |
 | `Dockerfile`         | Instructions to build the Docker image                      |
