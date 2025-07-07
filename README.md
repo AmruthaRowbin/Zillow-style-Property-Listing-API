@@ -6,19 +6,23 @@ It supports secure login, CRUD operations for properties, and powerful API featu
 📁  Project Structure
 
 propertylist/
-├── controllers/
-├── models/
-├── routes/
-├── middleware/
-├── config/
-├── utils/
-├── .env
-├── .gitignore
-├── Dockerfile
-├── docker-compose.yml
-├── package.json
-├── server.js
-└── README.md
+├── config/               # Database and Redis configuration files
+├── controllers/          # All route handler logic (e.g., auth, property)
+├── docs/                 # API documentation (Postman collection, Swagger, etc.)
+├── jobs/                 # Scheduled background tasks (e.g., property updater)
+├── middleware/           # Custom middleware (e.g., auth, error handlers)
+├── models/               # Mongoose models (User, Property, etc.)
+├── routes/               # API route definitions
+├── test/                 # Jest test cases
+├── utils/                # Utility/helper functions
+├── .env                  # Environment variables
+├── .gitignore            # To ignore files like node_modules, .env, etc.
+├── Dockerfile            # Docker instructions to build the image
+├── docker-compose.yml    # Docker multi-service configuration
+├── package.json          # Project metadata and dependencies
+├── server.js             # Application entry point
+└── README.md             # Project overview and instructions
+
 
 
 
@@ -180,4 +184,16 @@ Testing
 This project uses Jest and Supertest for unit and integration testing of the API endpoints.
 
 
+🔄 Background Job (Scheduled Task)
 
+A background task is scheduled to run every 1 hour using `setInterval`. It updates all property documents' `updatedAt` field with the current timestamp.
+
+
+This task is defined in `/jobs/updateProperties.js` and helps in simulating active listings.
+
+
+✅ How to Test it
+1. Run the server:
+2. Wait for the log:
+    "Running background update task...
+     Updated X properties"
