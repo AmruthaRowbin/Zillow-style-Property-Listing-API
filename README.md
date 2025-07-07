@@ -5,23 +5,25 @@ It supports secure login, CRUD operations for properties, and powerful API featu
 
 📁  Project Structure
 
-propertylist/
-├── config/               # Database and Redis configuration files
-├── controllers/          # All route handler logic (e.g., auth, property)
-├── docs/                 # API documentation (Postman collection, Swagger, etc.)
-├── jobs/                 # Scheduled background tasks (e.g., property updater)
-├── middleware/           # Custom middleware (e.g., auth, error handlers)
-├── models/               # Mongoose models (User, Property, etc.)
-├── routes/               # API route definitions
-├── test/                 # Jest test cases
-├── utils/                # Utility/helper functions
-├── .env                  # Environment variables
-├── .gitignore            # To ignore files like node_modules, .env, etc.
-├── Dockerfile            # Docker instructions to build the image
-├── docker-compose.yml    # Docker multi-service configuration
-├── package.json          # Project metadata and dependencies
-├── server.js             # Application entry point
-└── README.md             # Project overview and instructions
+| Folder/File          | Description                                                 |
+| -------------------- | ----------------------------------------------------------- |
+| `config/`            | Database and Redis configuration files                      |
+| `controllers/`       | Route handler logic (e.g., `auth`, `property`)              |
+| `docs/`              | API documentation (Postman collection, Swagger, etc.)       |
+| `jobs/`              | Scheduled background tasks (e.g., property updater)         |
+| `middleware/`        | Custom middleware (auth, error handling, etc.)              |
+| `models/`            | Mongoose models (`User`, `Property`, etc.)                  |
+| `routes/`            | API route definitions                                       |
+| `test/`              | Unit and integration tests using Jest & Supertest           |
+| `utils/`             | Utility/helper functions                                    |
+| `.env`               | Environment variable definitions                            |
+| `.gitignore`         | Ignore files like `node_modules`, `.env`, log files, etc.   |
+| `Dockerfile`         | Instructions to build the Docker image                      |
+| `docker-compose.yml` | Docker multi-container orchestration configuration          |
+| `package.json`       | Project metadata, scripts, and dependencies                 |
+| `server.js`          | Application entry point (starts server and background jobs) |
+| `README.md`          | Project overview, setup instructions, and documentation     |
+
 
 
 
