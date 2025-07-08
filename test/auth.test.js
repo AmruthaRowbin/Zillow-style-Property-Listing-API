@@ -6,6 +6,7 @@ const jwt = require('jsonwebtoken');
 const app = require('../app'); 
 const User = require('../models/User');
 const Property = require('../models/Property');
+process.env.JWT_SECRET = 'testsecretkey';
 
 let token;
 let userId;
