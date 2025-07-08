@@ -45,5 +45,5 @@ jobs:
     - name: Run Jest Tests
       run: npm test
       env:
-        MONGO_URI: mongodb://localhost:27017/propertylist
+        MONGO_URI_TEST: mongodb://localhost:27017/propertylist
         REDIS_HOST: localhost
