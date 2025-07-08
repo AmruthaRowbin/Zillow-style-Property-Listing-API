@@ -6,7 +6,7 @@ let client;
 if (process.env.NODE_ENV !== 'test') {
   client = createClient({
     socket: {
-      host: process.env.REDIS_HOST || '127.0.0.1',  // Use Docker host or localhost
+      host: '127.0.0.1',//process.env.REDIS_HOST || '127.0.0.1',  // Use Docker host or localhost
       port: 6379,
       reconnectStrategy: false,
       connectTimeout: 2000,

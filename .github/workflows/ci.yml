@@ -1,0 +1,49 @@
+name: CI for Property Listing API
+
+# Trigger this workflow on push to the main branch
+on:
+  push:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest  # GitHub provides a virtual Ubuntu environment
+
+    # Define MongoDB and Redis services for testing
+    services:
+      mongo:
+        image: mongo
+        ports:
+          - 27017:27017
+        options: >-
+          --health-cmd="mongo --eval 'db.stats()'" 
+          --health-interval=10s 
+          --health-timeout=5s 
+          --health-retries=5
+
+      redis:
+        image: redis
+        ports:
+          - 6379:6379
+
+    steps:
+    # 1. Checkout the code (get your GitHub repo code into the runner)
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    # 2. Setup Node.js (GitHub will install Node 18)
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+
+    # 3. Install dependencies
+    - name: Install dependencies
+      run: npm install
+
+    # 4. Run tests
+    - name: Run Jest Tests
+      run: npm test
+      env:
+        MONGO_URI: mongodb://localhost:27017/testdb
+        REDIS_HOST: localhost
